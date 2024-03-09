@@ -24,6 +24,141 @@
 };
 
 / {
+    combos {
+
+        combo_screenshot {
+            timeout-ms = <50>;
+            key-positions = <19 18>;
+            bindings = <&kp RG(S) >;
+        };
+        combo_undo {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp LC(Z) >;
+        };
+        combo_cut {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&sk RCTRL >;
+        };
+        combo_copy {
+            timeout-ms = <50>;
+            key-positions = <18 17>;
+            bindings = <&kp LC(C) >;
+        };
+        combo_paste {
+            timeout-ms = <50>;
+            key-positions = <5 4>;
+            bindings = <&kp LC(V) >;
+        };
+        compatible = "zmk,combos";
+        combo_left_ctrlshift {
+            timeout-ms = <50>;
+            key-positions = <30 29>;
+            bindings = <&kp LS(LCTRL) >;
+        };
+        combo_left_ctrlalt {
+            timeout-ms = <50>;
+            key-positions = <29 28>;
+            bindings = <&kp LA(LCTRL) >;
+        };
+        combo_leftshiftalt {
+            timeout-ms = <50>;
+            key-positions = <30 28>;
+            bindings = <&kp LS(LALT) >;
+        };
+        combo_lefctrltshiftalt {
+            timeout-ms = <50>;
+            key-positions = <30 29 28>;
+            bindings = <&kp LS(LA(LCTRL))>;
+        };
+        combo_right_ctrlshift {
+            timeout-ms = <50>;
+            key-positions = <33 34>;
+            bindings = <&kp LS(LCTRL) >;
+        };
+        combo_right_ctrlalt {
+            timeout-ms = <50>;
+            key-positions = <34 35>;
+            bindings = <&kp LA(LCTRL) >;
+        };
+        combo_right_shiftalt {
+            timeout-ms = <50>;
+            key-positions = <33 35>;
+            bindings = <&kp LS(LALT) >;
+        };
+        combo_right_ctrlshiftalt {
+            timeout-ms = <50>;
+            key-positions = <33 34 35>;
+            bindings = <&kp LS(LA(LCTRL))>;
+        };
+    };
+};
+
+/ {
+ macros {
+        ace_jump_pycharm: ace_jump_pycharm {
+            label = "Acejump";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&kp SPACE &kp SPACE &kp S>
+                ;
+        };
+         vim_past_from_zero: vim_past_from_zero {
+            label = "vimpastzero";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&kp LS(SQT) &kp N0 &kp P>
+                ;
+        };
+         vim_past_from_system: vim_past_from_system {
+            label = "vimpastsystem";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&kp LS(SQT) &kp LS(N8) &kp P>
+                ;
+        };
+    };
+
+    behaviors {
+        td_f112: tap_dance_f112 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_f112";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp F11>, <&kp F12>;
+        };
+        td_78: tap_dance_78 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_78";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(KP_N7)>, <&kp LC(KP_N8)>;
+        };
+        td_49: tap_dance_49 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_49";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(KP_N4)>, <&kp LC(KP_N9)>;
+        };
+        td_50: tap_dance_50 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_50";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&kp LC(KP_N5)>, <&kp LC(KP_N0)>;
+        };
+    };
         keymap {
                 compatible = "zmk,keymap";
 
