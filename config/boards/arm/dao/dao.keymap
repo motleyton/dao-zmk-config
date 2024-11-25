@@ -15,7 +15,7 @@
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
-&td { tap_ms = <200>; };
+// &td { tap_ms = <200>; };
 
 
 / {
